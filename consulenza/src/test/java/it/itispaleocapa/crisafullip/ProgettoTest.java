@@ -3,9 +3,6 @@ package it.itispaleocapa.crisafullip;
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
 
-/**
- * Unit test for simple App.
- */
 class ProgettoTest {
     @Test
     public void testGetCostoComplessivo() throws MembroNonEsistenteException {
