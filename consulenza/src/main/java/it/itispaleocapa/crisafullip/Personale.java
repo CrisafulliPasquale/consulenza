@@ -1,38 +1,26 @@
 package it.itispaleocapa.crisafullip;
 
-enum Area {
-    informatica,
-    elettronica
-}
 
-enum Ruolo {
-    Dirigente,
-    FunzionarioJunior,
-    FunzionarioSenior,
-    Tecnico
-}
 
-public class Personale {
-    private int codice;
-    private String cognome;
-    private String nome;
-    private int annoAssunzione;
-    private boolean interno;
-    private Area area;
-    private Ruolo ruolo;
+public abstract class Personale {
+    public int codice;
+    public String nome;
+    public String cognome;
+    public int annoAssunzione;
 
-    public Personale(int codice, String cognome, String nome, int annoAssunzione, boolean interno, Area area, Ruolo ruolo) {
-        this.codice = codice;
-        this.cognome = cognome;
-        this.nome = nome;
-        this.annoAssunzione = annoAssunzione;
-        this.interno = interno;
-        this.area = area;
-        this.ruolo = ruolo;
+    public Personale(int code, String n, String c, int aA){
+        this.codice = code;
+        this.cognome = c;
+        this.nome = n;
+        this.annoAssunzione = aA;
     }
 
-    public int getCodice() {
-        return codice;
+    //metodo che posso utilizzare in tutte le altri classi dipendenti da questa
+    public abstract double getCostoOrario();
+
+
+    public String getCodice() {
+        return "C" + codice;
     }
 
     public String getCognome() {
@@ -43,26 +31,9 @@ public class Personale {
         return nome;
     }
 
-    public int getAnnoAssunzione() {
+    public int getAnnoInizio() {
         return annoAssunzione;
-    }
-
-    public boolean isInterno() {
-        return interno;
-    }
-
-    public Area getArea() {
-        return area;
-    }
-
-    public Ruolo getRuolo() {
-        return ruolo;
-    }
-
-    @Override
-    public String toString() {
-        return "Operaio con: " + " codice:" + codice +", " + cognome + '\'' +", " + nome + '\'' +", annoAssunzione: " + annoAssunzione + ", interno:" + interno +", area: " + area +", ruolo: " + ruolo;
     }
 }
 
-class MembroNonEsistenteException extends Exception{}
+
