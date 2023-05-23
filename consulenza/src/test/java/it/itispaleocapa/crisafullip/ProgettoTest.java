@@ -33,8 +33,8 @@ public class ProgettoTest {
     @Test
     public void testGetCostoComplessivoProgetto() throws MembroNonValidoException {
         Progetto p = new Progetto();
-        Personale membro1 = new Dirigente(1, "Mario", "Rossi", 2010);
-        Personale membro2 = new FunzionarioJunior(2, "Luigi", "Verdi", 2015);
+        Personale membro1 = new Dirigente(1, "Pasquale", "Crisafulli", 2010);
+        Personale membro2 = new FunzionarioJunior(2, "Samuele", "Labollita", 2015);
         
         p.aggiungiMembro(membro1);
         p.aggiungiMembro(membro2);
